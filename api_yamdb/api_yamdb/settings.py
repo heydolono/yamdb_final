@@ -3,6 +3,8 @@ from datetime import timedelta
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
+SECRET_KEY = os.environ('SECRET_KEY')
+
 DEBUG = False
 
 ALLOWED_HOSTS = ['*']
@@ -113,7 +115,7 @@ SIMPLE_JWT = {
     'AUTH_HEADER_TYPES': ('Bearer', ),
 }
 
-SECRET_KEY = '0w83yczn93_#an+r9h+8ltvyxqcqws30q$hbk8^ky=s!cu%2nj'
+SECRET_KEY = os.getenv('SECRET_KEY')
 
 EMAIL_BACKEND = 'django.core.mail.backends.filebased.EmailBackend'
 EMAIL_FILE_PATH = os.path.join(BASE_DIR, 'emails')
