@@ -113,7 +113,7 @@ SIMPLE_JWT = {
     'AUTH_HEADER_TYPES': ('Bearer', ),
 }
 
-SECRET_KEY = os.getenv('SECRET_KEY')
+SECRET_KEY = '0w83yczn93_#an+r9h+8ltvyxqcqws30q$hbk8^ky=s!cu%2nj'
 
 EMAIL_BACKEND = 'django.core.mail.backends.filebased.EmailBackend'
 EMAIL_FILE_PATH = os.path.join(BASE_DIR, 'emails')
