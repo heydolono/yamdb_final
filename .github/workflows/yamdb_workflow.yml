@@ -8,9 +8,6 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-      with:
-        script: |
-        echo SECRET_KEY=${{ secrets.SECRET_KEY }} >> .env
     - name: Set up Python 
       uses: actions/setup-python@v2
       with:
@@ -25,6 +22,7 @@ jobs:
       run: |
         python -m flake8
         cd api_yamdb/
+        echo SECRET_KEY=${{ secrets.SECRET_KEY }} >> .env
         python manage.py test
 
   build_and_push_to_docker_hub:
