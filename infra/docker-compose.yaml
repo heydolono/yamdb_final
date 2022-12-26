@@ -5,7 +5,7 @@ services:
     volumes:
       - /var/lib/postgresql/data/
     env_file:
-      - ./env
+      - ./.env
   web:
     build: ../api_yamdb
     restart: always
