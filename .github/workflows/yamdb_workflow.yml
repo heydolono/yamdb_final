@@ -21,7 +21,7 @@ jobs:
     - name: Test with flake8 and django tests
       run: |
         python -m flake8
-        cd infra_project/
+        cd api_yamdb/
         python manage.py test
 
   build_and_push_to_docker_hub:
@@ -42,7 +42,7 @@ jobs:
       uses: docker/build-push-action@v2 
       with:
         push: true
-        tags: ${{ secrets.DOCKER_USERNAME }}/infra:latest
+        tags: ${{ secrets.DOCKER_USERNAME }}/yamdb:latest
 
   deploy:
     runs-on: ubuntu-latest
