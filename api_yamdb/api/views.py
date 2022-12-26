@@ -1,28 +1,30 @@
 from random import sample
 
-from django_filters.rest_framework import DjangoFilterBackend
 from django.conf import settings
 from django.core.mail import send_mail
-from django.db.models import Avg
 from django.db import IntegrityError
+from django.db.models import Avg
 from django.shortcuts import get_object_or_404
+from django_filters.rest_framework import DjangoFilterBackend
 from rest_framework import status
 from rest_framework.decorators import action, api_view, permission_classes
 from rest_framework.filters import OrderingFilter, SearchFilter
-from rest_framework.mixins import (
-    CreateModelMixin, DestroyModelMixin, ListModelMixin, )
+from rest_framework.mixins import (CreateModelMixin, DestroyModelMixin,
+                                   ListModelMixin)
 from rest_framework.permissions import AllowAny, IsAuthenticated
 from rest_framework.response import Response
 from rest_framework.viewsets import GenericViewSet, ModelViewSet
 from rest_framework_simplejwt.tokens import RefreshToken
 
-from .filters import TitleFilter
 from reviews.models import Category, Genre, Review, Title, User
+
+from .filters import TitleFilter
 from .permissions import IsAdmin, IsAuthorOrModeratorOrReadOnly, ReadOnly
-from .serializers import (
-    CategorySerializer, CommentSerializer, GenreSerializer,
-    PostTitleSerializer, ReviewSerializer, SignUpSerializer, TitleSerializer,
-    TokenObtainSerializer, UserNotAdminSerializer, UserSerializer, )
+from .serializers import (CategorySerializer, CommentSerializer,
+                          GenreSerializer, PostTitleSerializer,
+                          ReviewSerializer, SignUpSerializer, TitleSerializer,
+                          TokenObtainSerializer, UserNotAdminSerializer,
+                          UserSerializer)
 
 
 @api_view(['POST', ])
