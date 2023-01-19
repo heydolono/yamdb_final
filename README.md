@@ -49,6 +49,9 @@ docker-compose exec web python manage.py loaddata fixtures.json
 ```
 docker-compose exec web python manage.py collectstatic --no-input
 ```
+
+### Развернутый проект доступен на http://<ipсервера>:8000
+
 ## Примеры запросов к API и ответов
 ### Доступно на http://127.0.0.1:8000/redoc/
 
@@ -63,3 +66,4 @@ docker-compose exec web python manage.py collectstatic --no-input
 - [Пётр Чухланцев](https://github.com/PETRUSHQUE)
 - [Максим Колесников](https://github.com/heydolono)
 - [Александр Шевченко](https://github.com/Persev88)
+
